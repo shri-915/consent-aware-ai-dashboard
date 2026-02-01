@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A developer-facing dashboard for debugging and evaluating AI systems with consent-aware data access">
+    <meta name="keywords" content="AI, consent, privacy, dashboard, debugging, evaluation">
+    <meta name="author" content="Consent-Aware AI Dashboard">
+    <title>Consent-Aware AI Dashboard | Privacy-First AI Debugging</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo-icon">🛡️</span>
+                <span class="logo-text">Consent-Aware AI</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="https://github.com/shri-915/consent-aware-ai-dashboard" target="_blank" class="github-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">Privacy-First AI Development</div>
+                <h1 class="hero-title">
+                    Consent-Aware AI<br>
+                    <span class="gradient-text">Debug & Evaluation Dashboard</span>
+                </h1>
+                <p class="hero-subtitle">
+                    A developer-facing dashboard for debugging and evaluating AI systems where user consent directly gates data access. Built for transparency, observability, and privacy-first AI platforms.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#getting-started" class="btn btn-primary">Get Started</a>
+                    <a href="https://github.com/shri-915/consent-aware-ai-dashboard" target="_blank" class="btn btn-secondary">View on GitHub</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">% Consent Gated</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="3">0</div>
+                        <div class="stat-label">Data Categories</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="8">0</div>
+                        <div class="stat-label">AI Output Variants</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg-gradient"></div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <h2 class="section-title">The Problem This Solves</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="card-icon">🔒</div>
+                    <h3>Consent Gating</h3>
+                    <p>User consent state must directly control which data categories are accessible to AI inference</p>
+                </div>
+                <div class="problem-card">
+                    <div class="card-icon">🐛</div>
+                    <h3>Debugging</h3>
+                    <p>Engineers need visibility into which data was used, which was blocked, and why outputs differ</p>
+                </div>
+                <div class="problem-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Evaluation</h3>
+                    <p>Teams need metrics to measure how AI outputs change when consent is modified</p>
+                </div>
+                <div class="problem-card">
+                    <div class="card-icon">👁️</div>
+                    <h3>Observability</h3>
+                    <p>Complete audit trails of AI requests, consent states, and outputs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">System Architecture</h2>
+            <p class="section-subtitle">Clean separation of concerns with modular services</p>
+            <div class="architecture-diagram">
+                <div class="arch-layer">
+                    <div class="arch-title">Frontend Layer</div>
+                    <div class="arch-components">
+                        <div class="arch-component">
+                            <div class="component-name">Next.js Dashboard</div>
+                            <div class="component-tech">TypeScript • React • TailwindCSS</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arch-connector">↓ HTTP/REST API ↓</div>
+                <div class="arch-layer">
+                    <div class="arch-title">Backend Services</div>
+                    <div class="arch-components">
+                        <div class="arch-component">
+                            <div class="component-name">Consent Service</div>
+                            <div class="component-desc">Grant/Revoke Management</div>
+                        </div>
+                        <div class="arch-component">
+                            <div class="component-name">Data Service</div>
+                            <div class="component-desc">Consent-Gated Access</div>
+                        </div>
+                        <div class="arch-component">
+                            <div class="component-name">AI Service</div>
+                            <div class="component-desc">RAG Pipeline</div>
+                        </div>
+                        <div class="arch-component">
+                            <div class="component-name">Evaluation Service</div>
+                            <div class="component-desc">What-If Analysis</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arch-layer">
+                    <div class="arch-title">Observability Layer</div>
+                    <div class="arch-components">
+                        <div class="arch-component">
+                            <div class="component-name">Request Logger</div>
+                            <div class="component-desc">In-Memory Audit Trail</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Consent Timeline</h3>
+                    <p>Visual timeline of all consent events with grant/revoke actions and timestamps</p>
+                    <ul class="feature-list">
+                        <li>Real-time consent state tracking</li>
+                        <li>Category-level granularity</li>
+                        <li>Complete audit history</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Attribution Panel</h3>
+                    <p>See exactly which data categories were used or blocked for each AI request</p>
+                    <ul class="feature-list">
+                        <li>Data usage transparency</li>
+                        <li>Blocked vs. accessible categories</li>
+                        <li>Request-level breakdown</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧪</div>
+                    <h3>What-If Analysis</h3>
+                    <p>Compare AI outputs under different consent scenarios without modifying production state</p>
+                    <ul class="feature-list">
+                        <li>Side-by-side comparisons</li>
+                        <li>Similarity scoring</li>
+                        <li>Confidence delta analysis</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Evaluation Metrics</h3>
+                    <p>Quantitative measures of how consent affects AI quality and outputs</p>
+                    <ul class="feature-list">
+                        <li>Text similarity (cosine)</li>
+                        <li>Confidence scoring</li>
+                        <li>Latency tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section id="getting-started" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Getting Started</h2>
+            <div class="getting-started-content">
+                <div class="setup-column">
+                    <h3 class="setup-title">
+                        <span class="setup-number">1</span>
+                        Backend Setup
+                    </h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>bash</span>
+                            <button class="copy-btn" data-clipboard-target="backend-code">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <pre id="backend-code"><code>cd backend
+python3 -m venv venv
+source venv/bin/activate
+pip install fastapi uvicorn pydantic python-multipart --upgrade
+uvicorn app.main:app --reload --port 8000</code></pre>
+                    </div>
+                    <p class="setup-note">Compatible with Python 3.11+. Backend runs on <code>localhost:8000</code></p>
+                </div>
+
+                <div class="setup-column">
+                    <h3 class="setup-title">
+                        <span class="setup-number">2</span>
+                        Frontend Setup
+                    </h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>bash</span>
+                            <button class="copy-btn" data-clipboard-target="frontend-code">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <pre id="frontend-code"><code>cd frontend
+npm install
+npm run dev</code></pre>
+                    </div>
+                    <p class="setup-note">Next.js dashboard runs on <code>localhost:3000</code></p>
+                </div>
+            </div>
+
+            <div class="example-workflow">
+                <h3>Example Workflow</h3>
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Start with No Consent</h4>
+                            <p>All data categories revoked by default</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Run AI Request</h4>
+                            <p>Output reflects limited data access</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Grant Consent</h4>
+                            <p>Enable purchase_history category</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Run What-If Analysis</h4>
+                            <p>Compare outputs and see attribution changes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="section tech-stack">
+        <div class="container">
+            <h2 class="section-title">Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-logo">⚛️</div>
+                    <div class="tech-name">React</div>
+                    <div class="tech-desc">Frontend framework</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">▲</div>
+                    <div class="tech-name">Next.js</div>
+                    <div class="tech-desc">React framework</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">⚡</div>
+                    <div class="tech-name">FastAPI</div>
+                    <div class="tech-desc">Backend API</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">🐍</div>
+                    <div class="tech-name">Python</div>
+                    <div class="tech-desc">Backend language</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">📘</div>
+                    <div class="tech-name">TypeScript</div>
+                    <div class="tech-desc">Type safety</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">🎨</div>
+                    <div class="tech-name">Tailwind</div>
+                    <div class="tech-desc">CSS framework</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🛡️</span>
+                    <span class="logo-text">Consent-Aware AI Dashboard</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/shri-915/consent-aware-ai-dashboard" target="_blank">GitHub</a>
+                    <a href="https://github.com/shri-915/consent-aware-ai-dashboard/blob/main/README.md" target="_blank">Documentation</a>
+                    <a href="https://github.com/shri-915/consent-aware-ai-dashboard/issues" target="_blank">Issues</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Built for privacy-first AI development • Open Source</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
