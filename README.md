@@ -1,6 +1,10 @@
 # Consent-Aware AI Debug & Evaluation Dashboard
 
+[![GitHub Pages](https://img.shields.io/badge/docs-GitHub%20Pages-blue?style=for-the-badge&logo=github)](https://shri-915.github.io/consent-aware-ai-dashboard/)
+
 A developer-facing dashboard for debugging and evaluating AI systems with consent-aware data access. This project demonstrates how to build observability and evaluation tools for privacy-first AI platforms where user consent directly gates data access.
+
+> **📖 [View Full Documentation](https://shri-915.github.io/consent-aware-ai-dashboard/)** - Visit our GitHub Pages site for a comprehensive overview, architecture diagrams, and getting started guide.
 
 ## Problem This Solves
 
@@ -116,6 +120,12 @@ consent-aware-ai-dashboard/
 │   ├── next.config.js
 │   ├── tailwind.config.js
 │   └── postcss.config.js
+│
+├── docs/                               # GitHub Pages documentation site
+│   ├── index.html                     # Landing page
+│   ├── style.css                      # Styles with glassmorphism effects
+│   ├── script.js                      # Interactive functionality
+│   └── .nojekyll                      # Disable Jekyll processing
 │
 └── README.md
 ```
